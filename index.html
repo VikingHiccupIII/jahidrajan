@@ -55,32 +55,22 @@
 </header>
 
 <div class="container">
-   <section>
-    <h2>About Me</h2>
-    <p>
-        Qualified Business Development Executive with experience in the international market.
-        As a Business Development Executive, I am personable, good at cold calling, building
-        relationships, solving problems, prospecting, and closing deals. I also excel in
-        figuring out prospect’s needs, articulating product benefits, and creating
-        solutions that provide value to the prospects.
-    </p>
-    <!-- Use 'input' to choose and display an image from your computer -->
-    <input type="file" id="profilePic" accept="image/*">
-    <!-- Display the selected image -->
-    <img id="profilePicPreview" src="" alt="Profile Photo" style="max-width: 100%; height: auto;">
-</section>
-
-<script>
-    // JavaScript to display the selected image
-    document.getElementById('profilePic').addEventListener('change', function() {
-        var file = this.files[0];
-        var reader = new FileReader();
-        reader.onload = function(e) {
-            document.getElementById('profilePicPreview').src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-    });
-</script>
+    <section>
+        <h2>About Me</h2>
+        <p>
+            Qualified Business Development Executive with experience in the international market.
+            As a Business Development Executive, I am personable, good at cold calling, building
+            relationships, solving problems, prospecting, and closing deals. I also excel in
+            figuring out prospect’s needs, articulating product benefits, and creating
+            solutions that provide value to the prospects.
+        </p>
+        <div>
+            <!-- Input element to choose and upload a file from your PC -->
+            <input type="file" id="profilePic" accept="image/*">
+            <!-- Display the selected image -->
+            <img id="profilePicPreview" src="" alt="Profile Photo" style="max-width: 100%; height: auto; display: block; margin-top: 10px;">
+        </div>
+    </section>
 
     <section>
         <h2>Contact Information</h2>
@@ -94,6 +84,18 @@
 <footer>
     &copy; 2024 Md Jahidul Islam Rajan. All rights reserved.
 </footer>
+
+<script>
+    // JavaScript to display the selected image
+    document.getElementById('profilePic').addEventListener('change', function() {
+        var file = this.files[0];
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('profilePicPreview').src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    });
+</script>
 
 </body>
 </html>
